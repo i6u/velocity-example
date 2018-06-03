@@ -68,18 +68,11 @@
                 <version>2.2</version>
                 <configuration>
                     <path>/ve</path>
-                    <url>http://localhost:8080/manager/html</url>
+                    <url>http://localhost:8080/manager/text</url>
                     <server>tomcat</server>
+                    <username>admin</username>
+                    <password>admin</password>
                 </configuration>
-                <!-- 在打包周期运行tomcat7 -->
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
