@@ -1,0 +1,29 @@
+## string
+<p>$!{me.getString()}</p>
+## 也可以这样写
+<p>$!{me.string}</p>
+
+## list 集合
+#foreach($name in $me.list())
+<li>$name</li>
+#end
+
+## 传参
+<strong>$me.whether(true)</strong>
+
+## if
+#set($f = 1)
+#if($f > 10)
+<strong>a</strong>
+#elseif($f > 5)
+<strong>b</strong>
+#else
+<strong>c</strong>
+#end
+
+## 引用定义的宏
+#set($greatlakes = ["Superior","Michigan","Huron","Erie","Ontario"])
+#set($color = "gray")
+<table>
+    #tablerows($color $greatlakes)
+</table>
