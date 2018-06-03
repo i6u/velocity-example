@@ -59,6 +59,7 @@
                     <source>1.8</source>
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
             <plugin>
@@ -66,11 +67,19 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <username>tomcat</username>
-                    <password>tomcat</password>
                     <path>/ve</path>
-                    <port>8080</port>
+                    <url>http://localhost:8080/manager/html</url>
+                    <server>tomcat</server>
                 </configuration>
+                <!-- 在打包周期运行tomcat7 -->
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

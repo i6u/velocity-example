@@ -11,6 +11,11 @@
 ## 传参
 <strong>$me.whether(true)</strong>
 
+## map
+#foreach($pair in $me.map().entrySet())
+    <ul> $pair.key $pair.toString()</ul>
+#end
+
 ## if
 #set($f = 1)
 #if($f > 10)
