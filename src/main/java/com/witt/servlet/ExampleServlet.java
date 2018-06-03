@@ -1,5 +1,7 @@
 package com.witt.servlet;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +18,12 @@ import java.io.IOException;
  */
 
 public class ExampleServlet extends HttpServlet {
+    private String value;
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        value = config.getInitParameter("you");
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -29,14 +37,13 @@ public class ExampleServlet extends HttpServlet {
                 "停下来了</br>" +
                 "就是生命的尽头</br>" +
                 "</br>" +
-                "一直爱你</br>" +
+                "一直爱你 <strong>" + value + "</strong></br>" +
                 "</br>" +
                 "-- 我");
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        doGet(req,resp);
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doPost(req, resp);
     }
-
 }
