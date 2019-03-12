@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tools>
-    <data type="boolean" key="xhtml" value="true"/>
-    <data type="boolean" key="isSimple" value="true"/>
-    <data type="number" key="version" value="2.0"/>
-    <data key="foo">this is foo</data>
-    <data key="bar">this is bar.</data>
     <toolbox scope="request">
-        <!--<tool key="toyTool" class="ToyTool" restrictTo="index*"/>-->
-
-        <tool key="link" class="org.apache.velocity.tools.view.LinkTool"/>
-        <tool key="params" class="org.apache.velocity.tools.view.ParameterTool"/>
-        <tool key="me" class="com.witt.velocity.ExampleVelocity"/>
-    </toolbox>
-    <toolbox scope="session">
-        <tool key="map" class="java.util.HashMap"/>
+        <tool key="ex" class="com.witt.velocity.ExampleVelocity"/>
     </toolbox>
 </tools>

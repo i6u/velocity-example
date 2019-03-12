@@ -5,15 +5,6 @@
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <filter>
-        <filter-name>globalFilter</filter-name>
-        <filter-class>com.witt.filter.GlobalFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>globalFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
 <!-- Define Velocity template handler -->
     <servlet>
         <servlet-name>velocity</servlet-name>
@@ -49,22 +40,4 @@
     <welcome-file-list>
         <welcome-file>index.vm</welcome-file>
     </welcome-file-list>
-
-    <servlet>
-        <servlet-name>life</servlet-name>
-        <servlet-class>com.witt.servlet.ExampleServlet</servlet-class>
-        <init-param>
-            <param-name>you</param-name>
-            <param-value>name</param-value>
-        </init-param>
-        <load-on-startup>2</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>life</servlet-name>
-        <url-pattern>/life</url-pattern>
-    </servlet-mapping>
-
-    <listener>
-        <listener-class>com.witt.listener.MyRequestListener</listener-class>
-    </listener>
 </web-app>
